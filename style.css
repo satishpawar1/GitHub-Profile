@@ -531,19 +531,29 @@ h2 {
 
 /* ---------- Stack ---------- */
 
-.stack-groups {
+.stack-table {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  margin-bottom: 56px;
 }
 
-.stack-group h4 {
-  margin: 0 0 14px;
-  color: var(--text-dim);
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+.stack-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 16px 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+}
+
+.stack-row:first-child { padding-top: 0; }
+.stack-row:last-child { border-bottom: none; }
+
+.stack-domain {
+  font-family: var(--font-display);
   font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text);
 }
 
 .tags {
@@ -562,15 +572,80 @@ h2 {
   color: var(--text);
 }
 
-.tag-link {
-  text-decoration: none;
-  color: var(--text);
-  transition: border-color 0.15s ease, color 0.15s ease;
+.certs-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 20px;
 }
 
-.tag-link:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.cert-card {
+  position: relative;
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cert-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 0%), rgba(108, 92, 231, 0.10), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cert-card:hover {
+  border-color: var(--accent-soft);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(20, 22, 31, 0.08);
+}
+
+.cert-card:hover::before { opacity: 1; }
+
+.cert-card img {
+  display: block;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  object-position: top;
+  border-bottom: 1px solid var(--border);
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover img { transform: scale(1.03); }
+
+.cert-info {
+  position: relative;
+  padding: 14px 16px;
+}
+
+.cert-title {
+  margin: 0 0 2px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.cert-card:hover .cert-title { color: var(--accent); }
+
+.cert-issuer {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-dim);
 }
 
 /* ---------- Contact band ---------- */
@@ -638,6 +713,7 @@ h2 {
   .stat-grid { grid-template-columns: repeat(2, 1fr); }
   section { padding: 64px 0; }
   .contact-inner { padding: 64px 24px 40px; }
+  .stack-row { grid-template-columns: 1fr; gap: 8px; }
 }
 
 @media (max-width: 420px) {

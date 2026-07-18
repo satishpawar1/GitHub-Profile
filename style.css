@@ -356,9 +356,10 @@ h2 {
 .edu-card {
   position: relative;
   display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 18px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--card);
@@ -399,29 +400,17 @@ h2 {
 .edu-card:hover::before { opacity: 1; }
 .edu-card:hover::after { transform: scaleY(1); }
 
-.edu-badge {
+.edu-logo {
   position: relative;
-  flex-shrink: 0;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.01em;
-  color: var(--accent);
-  background: var(--accent-wash);
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  height: 34px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  object-position: left center;
+  transition: transform 0.25s ease;
 }
 
-.edu-card:hover .edu-badge {
-  background: var(--accent);
-  color: #FFFFFF;
-  transform: scale(1.06);
-}
+.edu-card:hover .edu-logo { transform: scale(1.05); }
 
 .edu-info { position: relative; }
 

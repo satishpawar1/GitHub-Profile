@@ -156,20 +156,47 @@ a { color: var(--accent); }
 }
 
 .stat-card {
+  position: relative;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-navy);
   border-radius: var(--radius);
   padding: 20px 16px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
 }
 
+.stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(200px circle at var(--mx, 50%) var(--my, 0%), rgba(156, 144, 245, 0.25), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.stat-card:hover {
+  border-color: var(--accent-soft);
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-3px);
+}
+
+.stat-card:hover::before { opacity: 1; }
+
 .stat-number {
+  position: relative;
   font-size: 1.7rem;
   font-weight: 700;
   color: var(--accent-soft);
   margin: 0 0 6px;
+  transition: transform 0.25s ease;
 }
 
+.stat-card:hover .stat-number { transform: scale(1.06); }
+
 .stat-label {
+  position: relative;
   font-size: 0.8rem;
   color: var(--text-on-navy-dim);
   margin: 0;
@@ -188,15 +215,6 @@ section {
   padding: 88px 0;
   border-bottom: 1px solid var(--border);
   scroll-margin-top: 24px;
-}
-
-.section-number {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 0.08em;
-  margin: 0 0 8px;
 }
 
 h2 {

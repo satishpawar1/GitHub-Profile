@@ -661,12 +661,6 @@ h2 {
 
 .contact-band h2 { color: var(--text-on-navy); }
 
-.contact-lead {
-  color: var(--text-on-navy-dim);
-  margin: 0 0 28px;
-  font-size: 1.05rem;
-}
-
 .contact-links {
   display: flex;
   gap: 12px;

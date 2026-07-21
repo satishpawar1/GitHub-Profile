@@ -488,6 +488,18 @@ h2 {
 
 .project-card:hover h3 { color: var(--accent); }
 
+.project-screenshot {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  margin: 0 0 18px;
+}
+
 .project-card p { position: relative; color: var(--text-dim); margin: 0 0 18px; }
 
 .project-tech {

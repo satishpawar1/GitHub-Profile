@@ -281,6 +281,9 @@
     border-radius: 4px;
     padding: 22px 22px;
     box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .scope-card .eyebrow { margin-bottom: 10px; font-size: 11px; }
   .scope-card p { margin: 0; font-size: 16px; font-weight: 500; line-height: 1.35; }
@@ -378,6 +381,7 @@
   .legend-row { display: flex; align-items: center; gap: 9px; font-size: 12px; color: var(--text-muted); }
   .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
   .legend-row b { color: var(--text); font-weight: 600; margin-left: auto; }
+  .legend-caption { font-size: 11px; color: var(--text-faint); text-align: center; margin-top: 4px; max-width: 220px; line-height: 1.4; }
 
   .rootcause-body h2 { font-size: clamp(22px,2vw,28px); font-weight: 600; margin: 0 0 12px; line-height: 1.25; }
   .rootcause-body h2 b { color: var(--accent); }
@@ -598,6 +602,7 @@
             <div class="legend-row"><span class="legend-dot" style="background:var(--accent-2)"></span>External (NAS + weather + security) <b>6.50%</b></div>
             <div class="legend-row"><span class="legend-dot" style="background:var(--text-faint)"></span>Cancelled / diverted <b>1.20%</b></div>
           </div>
+          <p class="legend-caption">Legend shows share of all flights; center figure shows share of delayed flights only.</p>
         </div>
         <div class="rootcause-body">
           <h2>Of all delayed flights, <b>~69% — roughly 7 in 10</b> — trace to airline-side causes, not weather (0.70%) or security (0.04%).</h2>
@@ -654,7 +659,7 @@
   <section class="slide" id="s9">
     <div class="content">
       <p class="eyebrow">Appendix A</p>
-      <h1 class="title serif">One passenger journey depends on many owners</h1>
+      <h1 class="title serif wide">One passenger journey depends on many owners</h1>
       <p class="dek">Fragmentation matters because every handoff creates another information gap for the traveler.</p>
       <div class="ecosystem">
         <div class="eco-col">
@@ -680,7 +685,7 @@
   <section class="slide" id="s10">
     <div class="content">
       <p class="eyebrow">Appendix B</p>
-      <h1 class="title serif">The broad system needs a deliberate focus</h1>
+      <h1 class="title serif wide">The broad system needs a deliberate focus</h1>
       <p class="dek">Once the journey and ecosystem are visible, the first product move is to narrow the inquiry.</p>
       <div class="scope-grid">
         <div class="scope-card"><p class="eyebrow">Geography</p><p>U.S. domestic commercial air travel</p></div>
@@ -697,7 +702,7 @@
   <section class="slide" id="s11">
     <div class="content">
       <p class="eyebrow">Appendix C</p>
-      <h1 class="title serif">How the evidence maps to the opportunity areas</h1>
+      <h1 class="title serif wide">How the evidence maps to the opportunity areas</h1>
       <p class="dek">Each opportunity area is tied back to a synthesis theme and the specific evidence behind it.</p>
       <table class="evidence-table">
         <thead>
